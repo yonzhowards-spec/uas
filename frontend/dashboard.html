@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Dashboard Admin</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+    <script>
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (!user || user.role != "manager") {
+
+    alert("Akses hanya untuk Manager");
+
+    window.location = "login.html";
+
+}
+
+</script>
+
+<header>
+    <button onclick="logout()">
+    Logout
+    </button>
+    
+    <div class="logo">
+        Food Ordering Management
+    </div>
+
+
+    <div class="nav">
+
+        <a href="index.html" class="nav-button">
+            Menu
+        </a>
+
+
+        <a href="orders.html" class="nav-button">
+            Pesanan
+        </a>
+
+
+        <a href="dashboard.html" class="nav-button active">
+            Dashboard
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<div class="dashboard-container">
+
+
+    <h1>
+        Dashboard Admin
+    </h1>
+
+
+
+    <div class="card-container">
+
+
+        <div class="dashboard-card">
+
+            <h3>
+                Total Pesanan
+            </h3>
+
+            <p id="jumlahOrder">
+                0
+            </p>
+
+        </div>
+
+
+
+
+        <div class="dashboard-card">
+
+            <h3>
+                Total Pendapatan
+            </h3>
+
+            <p id="pendapatan">
+                Rp 0
+            </p>
+
+        </div>
+
+
+
+
+        <div class="dashboard-card">
+
+            <h3>
+                Pesanan Pending
+            </h3>
+
+            <p id="pending">
+                0
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="dashboard-table">
+
+
+        <h2>
+            Data Pesanan
+        </h2>
+
+
+
+        <table>
+
+
+            <thead>
+
+                <tr>
+
+                    <th>ID Order</th>
+
+                    <th>Makanan</th>
+
+                    <th>Total</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+
+            </thead>
+
+
+
+            <tbody id="dashboardData">
+
+
+            </tbody>
+
+
+
+        </table>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<script src="./js/dashboard.js"></script>
+
+
+</body>
+
+
+</html>
