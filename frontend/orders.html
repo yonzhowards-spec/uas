@@ -15,11 +15,16 @@
 
 const user = JSON.parse(localStorage.getItem("user"));
 
+console.log("USER DI ORDERS:", user);
+
+
 if (!user || user.role != "manager") {
 
+    console.log("BUKAN MANAGER, KEMBALI INDEX");
     alert("Akses hanya untuk Manager");
 
-    window.location = "login.html";
+
+    window.location = "index.html";
 
 }
 

@@ -13,19 +13,6 @@
 
 
 <body>
-    <script>
-
-const user = JSON.parse(localStorage.getItem("user"));
-
-if (!user || user.role != "manager") {
-
-    alert("Akses hanya untuk Manager");
-
-    window.location = "login.html";
-
-}
-
-</script>
 
 <header>
     <button onclick="logout()">
@@ -56,7 +43,6 @@ if (!user || user.role != "manager") {
     </div>
 
 </header>
-
 
 
 <div class="dashboard-container">
@@ -119,7 +105,6 @@ if (!user || user.role != "manager") {
 
 
 
-
     <div class="dashboard-table">
 
 
@@ -160,6 +145,140 @@ if (!user || user.role != "manager") {
 
         </table>
 
+
+
+    </div>
+
+    <!-- RIWAYAT PENJUALAN -->
+
+<div class="dashboard-table">
+
+
+    <h2>
+        Riwayat Penjualan
+    </h2>
+
+
+
+    <table>
+
+
+        <thead>
+
+            <tr>
+
+                <th>
+                    Tanggal
+                </th>
+
+
+                <th>
+                    Jumlah Order
+                </th>
+
+
+                <th>
+                    Pendapatan
+                </th>
+
+            </tr>
+
+
+        </thead>
+
+
+
+        <tbody id="historySales">
+
+
+        </tbody>
+
+
+
+    </table>
+
+
+
+</div>
+
+<!-- KELOLA MENU MANAGER -->
+    <div class="dashboard-table menu-manager">
+
+
+        <h2>
+            Kelola Menu
+        </h2>
+
+
+        <div class="add-menu">
+
+
+            <input 
+            type="text" 
+            id="namaMenu" 
+            placeholder="Nama Menu">
+
+
+            <input 
+            type="number" 
+            id="hargaMenu" 
+            placeholder="Harga">
+
+
+            <select id="kategoriMenu">
+
+                <option value="Makanan">
+                    Makanan
+                </option>
+
+                <option value="Minuman">
+                    Minuman
+                </option>
+
+                <option value="Appetizer">
+                    Appetizer
+                </option>
+
+            </select>
+
+
+            <button onclick="tambahMenu()">
+                Tambah Menu
+            </button>
+
+
+        </div>
+
+
+
+        <table>
+
+
+            <thead>
+
+                <tr>
+
+                    <th>Nama Menu</th>
+
+                    <th>Harga</th>
+
+                    <th>Kategori</th>
+
+                    <th>Aksi</th>
+
+                </tr>
+
+
+            </thead>
+
+
+            <tbody id="menuManager">
+
+
+            </tbody>
+
+
+        </table>
 
 
     </div>
