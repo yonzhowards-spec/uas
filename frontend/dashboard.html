@@ -13,7 +13,19 @@
 
 
 <body>
+<script>
 
+const data = JSON.parse(localStorage.getItem("user"));
+
+if (!data || data.user.role !== "manager") {
+
+    alert("Akses hanya untuk Manager");
+
+    window.location.href = "index.html";
+
+}
+
+</script>
 <header>
     <button onclick="logout()">
     Logout

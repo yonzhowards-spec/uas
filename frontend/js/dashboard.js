@@ -1,22 +1,3 @@
-function cekManager(){
-
-    const user = JSON.parse(
-        localStorage.getItem("user")
-    );
-
-
-    if(!user || user.role != "manager"){
-
-        alert("Akses hanya untuk Manager");
-
-        window.location.href = "index.html";
-
-    }
-
-}
-
-
-cekManager();
 const API_MENU = "http://localhost:3000/menu";
 
 

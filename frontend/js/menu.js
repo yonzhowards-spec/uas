@@ -120,26 +120,3 @@ function logout() {
     window.location = "login.html";
 
 }
-router.delete("/:id", (req,res)=>{
-
-    let id=req.params.id;
-
-
-    db.query(
-        "DELETE FROM menu WHERE id_menu=?",
-        [id],
-
-        (err,result)=>{
-
-            if(err)
-            return res.json(err);
-
-
-            res.json({
-                message:"Menu deleted"
-            });
-
-        }
-    );
-
-});

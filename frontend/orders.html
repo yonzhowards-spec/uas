@@ -13,18 +13,13 @@
 <body>
 <script>
 
-const user = JSON.parse(localStorage.getItem("user"));
+const data = JSON.parse(localStorage.getItem("user"));
 
-console.log("USER DI ORDERS:", user);
+if (!data || data.user.role !== "manager") {
 
-
-if (!user || user.role != "manager") {
-
-    console.log("BUKAN MANAGER, KEMBALI INDEX");
     alert("Akses hanya untuk Manager");
 
-
-    window.location = "index.html";
+    window.location.href = "index.html";
 
 }
 

@@ -408,7 +408,7 @@ async function checkout(){
 
 
     }
-
+}
 
 function logout() {
 
@@ -417,5 +417,5 @@ function logout() {
     window.location = "login.html";
 
 }
-}
+
 loadMenu();
